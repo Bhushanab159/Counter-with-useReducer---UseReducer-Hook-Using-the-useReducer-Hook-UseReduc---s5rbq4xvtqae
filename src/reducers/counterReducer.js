@@ -1,13 +1,17 @@
-const counterReducer = (state,action) =>{
-    switch (action) {
-        case incrementing:
-            return state + 1 ; 
-        case decrementing :
-            return state - 1 ;
-    
-        default:
-            return state;
+import React from "react";
+
+
+
+
+const counterReducer = (state,action) => {
+    console.log(state, action);
+    if (action.type === "INCREMENT") {
+        return state + 1; 
     }
+    if (action.type === "DECREMENT") {
+        return state - 1; 
+    }
+    return state;
 }
 
-export {counterReducer}
+export  {counterReducer}
